@@ -1,6 +1,6 @@
 package its.biblioteca.bibliotecafx.application;
 
-import codebase.Archivio;
+import its.biblioteca.bibliotecafx.codebase.Archivio;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
