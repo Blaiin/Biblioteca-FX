@@ -1,0 +1,12 @@
+its\biblioteca\bibliotecafx\application\ListaUtentiController.class
+its\biblioteca\bibliotecafx\application\ListaLibriController.class
+its\biblioteca\bibliotecafx\codebase\Prestito.class
+its\biblioteca\bibliotecafx\utils\FileManager.class
+its\biblioteca\bibliotecafx\utils\UtilityMethods.class
+its\biblioteca\bibliotecafx\application\ListaPrestitiController.class
+its\biblioteca\bibliotecafx\codebase\Utente.class
+its\biblioteca\bibliotecafx\codebase\Libro.class
+module-info.class
+its\biblioteca\bibliotecafx\application\GestioneBiblioteca.class
+its\biblioteca\bibliotecafx\codebase\Archivio.class
+its\biblioteca\bibliotecafx\application\OverviewController.class
