@@ -12,7 +12,7 @@ import java.util.List;
 
 public class FileManager {
     private static final String directoryArchivePath = System.getProperty("user.dir") +
-            File.separator + "codebase.Archivio Libri" + File.separator;
+            File.separator + "Archivio Libri" + File.separator;
     private static final String UTENTI_JSON = "Utenti.json";
     private static final String LIBRI_JSON = "Libri.json";
     private static final String PRESTITI_JSON = "Prestiti.json";
