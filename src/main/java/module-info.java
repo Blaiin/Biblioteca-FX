@@ -9,5 +9,7 @@ module its.biblioteca.bibliotecafx {
     requires org.kordamp.bootstrapfx.core;
     requires com.almasb.fxgl.all;
     requires com.google.gson;
+
+    opens its.biblioteca.bibliotecafx.application to javafx.fxml;
     exports its.biblioteca.bibliotecafx.application;
 }

@@ -2,11 +2,10 @@ package its.biblioteca.bibliotecafx.application;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.util.Objects;
+import java.net.URL;
 
 public class LibraryManager extends Application {
 
@@ -14,18 +13,27 @@ public class LibraryManager extends Application {
     public void start(Stage stage) {
         try {
             OverviewController overView = new OverviewController();
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(overView.getFxmlLocation() + "/main/java/its/biblioteca/bibliotecafx/testFXML/Overview.fxml")));
-            Scene scene = new Scene(root);
+            URL resourceURL = getClass().getResource("Overview.fxml");
+                FXMLLoader fxmlLoader = new FXMLLoader(resourceURL);
+                Scene scene = new Scene(fxmlLoader.load());
+                stage.getIcons().add(overView.getIcon());
+                stage.setTitle("Library Overview");
+                stage.setScene(scene);
+                stage.show();
+            //System.out.println(resourceURL);
+            /* else {
+                System.err.println("Resource not found: " + resourceURL);
+                throw new NullPointerException();
+                // Handle the case where the resource is not found.
+            }*/
             //scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/resources/application.css")).toExternalForm());
-            stage.getIcons().add(overView.getIcon());
-            stage.setTitle("Library Overview");
-            stage.setScene(scene);
-            stage.show();
+
         } catch(Exception e) {
+            System.out.println("Errore: ");
             e.printStackTrace();
         }
     }
     public static void main(String[] args) {
-        launch(args);
+        launch();
     }
 }

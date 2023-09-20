@@ -149,7 +149,7 @@
             <!-- Default configuration for running with: mvn clean javafx:run -->
             <id>default-cli</id>
             <configuration>
-              <mainClass>its.biblioteca.bibliotecafx/its.biblioteca.bibliotecafx.application.GestioneBiblioteca</mainClass>
+              <mainClass>its.biblioteca.bibliotecafx/its.biblioteca.bibliotecafx.application.LibraryManager</mainClass>
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
               <jlinkImageName>app</jlinkImageName>

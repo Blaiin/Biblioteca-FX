@@ -12,7 +12,7 @@ import java.util.List;
 
 public class FileManager {
     private static final String directoryArchivePath = System.getProperty("user.dir") +
-            File.separator + "Archivio Books" + File.separator;
+            File.separator + "Archive" + File.separator;
     private static final String USERS_JSON = "Users.json";
     private static final String BOOKS_JSON = "Books.json";
     private static final String RENTS_JSON = "Rents.json";
