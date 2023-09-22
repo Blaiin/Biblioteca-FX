@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="792.0" prefWidth="1157.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="its.biblioteca.bibliotecafx.application.OverviewController">
-   <Button fx:id="addUserButton" layoutX="10.0" layoutY="750.0" mnemonicParsing="false" text="Add user" />
-   <Button fx:id="addBookButton" layoutX="90.0" layoutY="750.0" mnemonicParsing="false" text="Add book" />
-   <Button fx:id="addRentButton" layoutX="174.0" layoutY="750.0" mnemonicParsing="false" text="New rent.." />
-   <Button fx:id="showHistoryButton" layoutX="257.0" layoutY="750.0" mnemonicParsing="false" onAction="#showHistoryTab" text="Show History" />
-   <ImageView fx:id="overviewImage" fitHeight="686.0" fitWidth="1060.0" layoutX="49.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" />
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="its.biblioteca.bibliotecafx.application.OverviewController">
+   <Button fx:id="addUserButton" layoutX="14.0" layoutY="553.0" mnemonicParsing="false" text="Add user" />
+   <Button fx:id="addBookButton" layoutX="89.0" layoutY="553.0" mnemonicParsing="false" text="Add book" />
+   <Button fx:id="addRentButton" layoutX="169.0" layoutY="553.0" mnemonicParsing="false" text="New rent.." />
+   <Button fx:id="showHistoryButton" layoutX="253.0" layoutY="553.0" mnemonicParsing="false" onAction="#showHistoryTab" text="Show History" />
+   <ImageView fx:id="overviewImage" fitHeight="458.0" fitWidth="650.0" layoutX="38.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true" />
+   <Button fx:id="returnBookButton" layoutX="349.0" layoutY="553.0" mnemonicParsing="false" text="Return book" />
+   <Button fx:id="showRentsButton" layoutX="637.0" layoutY="553.0" mnemonicParsing="false" text="Show rents" />
+   <Button fx:id="showBooksButton" layoutX="551.0" layoutY="553.0" mnemonicParsing="false" text="Show books" />
+   <Button fx:id="showUsersButton" layoutX="469.0" layoutY="553.0" mnemonicParsing="false" text="Show users" />
+   <Label fx:id="versionLabel" layoutX="8.0" layoutY="6.0" prefHeight="17.0" prefWidth="211.0" />
 </AnchorPane>

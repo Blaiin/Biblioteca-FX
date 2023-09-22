@@ -22,7 +22,7 @@ public class LibraryManager extends Application {
             stage.setScene(scene);
             stage.show();
         } catch(Exception e) {
-            System.out.println("Errore: ");
+            System.out.println("Error: ");
             e.printStackTrace();
         }
     }
