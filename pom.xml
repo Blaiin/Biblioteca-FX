@@ -6,7 +6,7 @@
 
   <groupId>its.biblioteca</groupId>
   <artifactId>Biblioteca-FX</artifactId>
-  <version>0.1.0.alpha</version>
+  <version>0.1.0-alpha</version>
   <name>Biblioteca FX</name>
 
   <properties>
