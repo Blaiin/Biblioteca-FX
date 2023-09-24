@@ -23,6 +23,7 @@
 /* Label styles */
 .label {
     -fx-font-weight: bold; /* Bold text for labels */
+    -fx-font-size: 10px;
 }
 
 /* Custom class styles */

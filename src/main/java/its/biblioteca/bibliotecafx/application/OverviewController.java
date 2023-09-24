@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import java.io.File;
 import javafx.fxml.FXML;
@@ -33,6 +34,16 @@ public class OverviewController implements Initializable {
     Button addRentButton;
     @FXML
     Button showHistoryButton;
+    @FXML
+    Button returnBookButton;
+    @FXML
+    Button showUsersButton;
+    @FXML
+    Button showBooksButton;
+    @FXML
+    Button showRentsButton;
+    @FXML
+    Label versionLabel;
     private final Image booksStack = new Image(String.valueOf(getClass().getResource("BooksStack.png")));
     @FXML
     ImageView overviewImage;
@@ -40,6 +51,7 @@ public class OverviewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         overviewImage.setImage(booksStack);
+        versionLabel.setText(FileManager.getProjectVersion());
         Archive archive = new Archive();
         archive.fileManager.manageFileJSON(archive.fileManager.getUsersJson());
         archive.fileManager.manageFileJSON(archive.fileManager.getBooksJson());

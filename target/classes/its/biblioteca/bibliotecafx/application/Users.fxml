@@ -3,10 +3,8 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="614.0" prefWidth="692.0"
-            xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="its.biblioteca.bibliotecafx.application.ListaUtentiController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="614.0" prefWidth="692.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="its.biblioteca.bibliotecafx.application.UsersListController">
    <children>
-      <ListView layoutX="14.0" layoutY="14.0" prefHeight="603.0" prefWidth="340.0" />
+      <ListView fx:id="usersListView" layoutX="14.0" layoutY="14.0" prefHeight="587.0" prefWidth="313.0" />
    </children>
 </AnchorPane>
