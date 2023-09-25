@@ -45,20 +45,21 @@ public class FileManager {
     }
 
     //Carica le liste dai JSON corrispondenti e ritorna una lista generics
-    public List<?> loadListJSON(String name, List<?> lista) {
+    public static List<?> loadListJSON(String name) {
+        List<?> listFromJson;
         try (Reader reader = new FileReader(directoryArchivePath + name)) {
             Gson gson = new GsonBuilder().create();
             Object[] objectsArray = gson.fromJson(reader, Object[].class);
 
             if (objectsArray != null) {
-                lista = Arrays.asList(objectsArray);
+                return listFromJson = Arrays.asList(objectsArray);
             }
         } catch (IOException | NullPointerException ioExc) {
-            System.err.println("Errore con i file JSON.");
+            System.err.println("JSON files error.");
             ioExc.printStackTrace();
         }
 
-        return lista;
+        return listFromJson = null;
     }
 
     //Generazione file JSON e controllo errori

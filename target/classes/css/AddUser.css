@@ -1,0 +1,27 @@
+/* Root styles */
+#userAnchorPane {
+    -fx-background-color: #fcf5d9; /* Background color for the entire application */
+    -fx-font-size: 12px; /* Default font size for the entire application */
+}
+
+/* Button styles */
+.button {
+    -fx-background-color: #825530; /* Background color of buttons */
+    -fx-text-fill: white; /* Text color of buttons */
+}
+
+.button:hover {
+    -fx-background-color: #663e1d; /* Background color of buttons on hover */
+}
+
+/* Text field styles */
+.text-field {
+    -fx-background-color: white; /* Background color of text fields */
+    -fx-border-color: #ccc; /* Border color of text fields */
+}
+
+/* Label styles */
+.label {
+    -fx-font-weight: bold; /* Bold text for labels */
+    -fx-font-size: 12px;
+}

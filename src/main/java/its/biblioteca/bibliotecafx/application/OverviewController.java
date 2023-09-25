@@ -1,6 +1,7 @@
 package its.biblioteca.bibliotecafx.application;
 
 import its.biblioteca.bibliotecafx.codebase.Archive;
+import its.biblioteca.bibliotecafx.utils.FileManager;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -17,13 +18,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class OverviewController implements Initializable {
     private static final char SEP = File.separator.charAt(0);
     private static final String currentDirectory = System.getProperty("user.dir");
     private static final String dynamicOutputPath = currentDirectory + SEP + "Archive" + SEP;
-    private final Image icon = new Image(String.valueOf(getClass().getResource("Library1.png")));
+    private final Image icon = new Image(String.valueOf(getClass().getResource("/images/Library1.png")));
     @FXML
     AnchorPane anchorPane;
     @FXML
@@ -44,7 +46,7 @@ public class OverviewController implements Initializable {
     Button showRentsButton;
     @FXML
     Label versionLabel;
-    private final Image booksStack = new Image(String.valueOf(getClass().getResource("BooksStack.png")));
+    private final Image booksStack = new Image(String.valueOf(getClass().getResource("/images/BooksStack.png")));
     @FXML
     ImageView overviewImage;
 
@@ -60,17 +62,45 @@ public class OverviewController implements Initializable {
     public void openAddUserTab() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("AddUser.fxml"));
         Parent dialogRoot = loader.load();
-        Stage dialogStage = new Stage();
+        AddUserController addUserController = loader.getController();
+        Stage dialogStage = addUserController.getDialogStage();
         dialogStage.setTitle("Add a user..");
         dialogStage.initModality(Modality.APPLICATION_MODAL);
-        dialogStage.setScene(new Scene(dialogRoot));
+        Scene scene = new Scene(dialogRoot);
+        String cssFile = Objects.requireNonNull(getClass().getResource("/css/AddUser.css")).toExternalForm();
+        scene.getStylesheets().add(cssFile);
+        dialogStage.getIcons().add(AddUserController.getIcon());
+        dialogStage.setScene(scene);
         dialogStage.showAndWait();
     }
-    public void openAddBookTab() {
 
+    public void openAddBookTab() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("AddBook.fxml"));
+        Parent dialogRoot = loader.load();
+        AddBookController addBookController = loader.getController();
+        Stage dialogStage = addBookController.getDialogStage();
+        dialogStage.setTitle("Add a book..");
+        dialogStage.initModality(Modality.APPLICATION_MODAL);
+        Scene scene = new Scene(dialogRoot);
+        String cssFile = Objects.requireNonNull(getClass().getResource("/css/AddBook.css")).toExternalForm();
+        scene.getStylesheets().add(cssFile);
+        dialogStage.getIcons().add(AddBookController.getIcon());
+        dialogStage.setScene(scene);
+        dialogStage.showAndWait();
     }
-    public void openNewRentTab() {
-
+    public void openNewRentTab() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("NewRent.fxml"));
+        Parent dialogRoot = loader.load();
+        NewRentController newRentController = loader.getController();
+        Stage dialogStage = newRentController.getDialogStage();
+        dialogStage.setTitle("Create a rent..");
+        dialogStage.initModality(Modality.APPLICATION_MODAL);
+        Scene scene = new Scene(dialogRoot);
+        String cssFile = Objects.requireNonNull(getClass().getResource("/css/NewRent.css")).toExternalForm();
+        scene.getStylesheets().add(cssFile);
+        dialogStage.getIcons().add(NewRentController.getIcon());
+        dialogStage.setScene(scene);
+        dialogStage.showAndWait();
     }
     public void openShowHistoryTab() {
 

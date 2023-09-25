@@ -16,7 +16,7 @@ public class LibraryManager extends Application {
             URL resourceURL = getClass().getResource("Overview.fxml");
             FXMLLoader fxmlLoader = new FXMLLoader(resourceURL);
             Scene scene = new Scene(fxmlLoader.load());
-            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("Overview.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/css/Overview.css")).toExternalForm());
             stage.getIcons().add(overView.getIcon());
             stage.setTitle("Library Overview");
             stage.setScene(scene);
