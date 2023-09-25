@@ -21,4 +21,5 @@
    <DatePicker fx:id="dateOfBirthPicker" layoutX="18.0" layoutY="253.0" prefHeight="25.0" prefWidth="383.0" />
    <Button fx:id="backButton" layoutX="360.0" layoutY="383.0" mnemonicParsing="false" onAction="#back" text="Back" />
    <Button fx:id="saveButton" layoutX="309.0" layoutY="383.0" mnemonicParsing="false" onAction="#handleSaveAction" text="Save" />
+   <Label fx:id="errorLabel" layoutX="20.0" layoutY="348.0" prefHeight="17.0" prefWidth="383.0" text="Mandatory field not filled." />
 </AnchorPane>

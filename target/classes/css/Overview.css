@@ -13,17 +13,38 @@
 .button:hover {
     -fx-background-color: #663e1d; /* Background color of buttons on hover */
 }
-
+#addUserButton,
+#addBookButton,
+#addRentButton,
+#showHistoryButton,
+#returnBookButton {
+    -fx-background-color: #825530; /* Background color of buttons */
+    -fx-text-fill: white;
+}
+#addUserButton:hover,
+#addBookButton:hover,
+#addRentButton:hover,
+#showHistoryButton:hover,
+#returnBookButton:hover {
+    -fx-background-color: #663e1d;
+    //-fx-min-width: 120px; /* Change to your desired width on hover */
+    //-fx-min-height: 40px;
+}
 /* Text field styles */
 .text-field {
     -fx-background-color: white; /* Background color of text fields */
     -fx-border-color: #ccc; /* Border color of text fields */
+    -fx-scale-x: 1.2; /* Scale factor for X-axis on hover */
+    -fx-scale-y: 1.2; /* Scale factor for Y-axis on hover */
 }
 
 /* Label styles */
 .label {
     -fx-font-weight: bold; /* Bold text for labels */
     -fx-font-size: 10px;
+}
+#versionLabel {
+-fx-text-fill: #fcf5d9;
 }
 
 /* Custom class styles */
