@@ -2,6 +2,7 @@ package its.biblioteca.bibliotecafx.application;
 
 import its.biblioteca.bibliotecafx.codebase.Archive;
 import its.biblioteca.bibliotecafx.utils.FileManager;
+import javafx.animation.ScaleTransition;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -15,6 +16,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -58,6 +60,11 @@ public class OverviewController implements Initializable {
         archive.fileManager.manageFileJSON(archive.fileManager.getUsersJson());
         archive.fileManager.manageFileJSON(archive.fileManager.getBooksJson());
         archive.fileManager.manageFileJSON(archive.fileManager.getRentsJson());
+        addHoverTransition(this.addUserButton);
+        addHoverTransition(this.addRentButton);
+        addHoverTransition(this.addBookButton);
+        addHoverTransition(this.showHistoryButton);
+        addHoverTransition(this.returnBookButton);
     }
     public void openAddUserTab() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("AddUser.fxml"));
@@ -102,8 +109,32 @@ public class OverviewController implements Initializable {
         dialogStage.setScene(scene);
         dialogStage.showAndWait();
     }
-    public void openShowHistoryTab() {
+    public void openShowHistoryTab() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ShowHistory.fxml"));
+        Parent dialogRoot = loader.load();
+        ShowHistoryController showHistoryController = loader.getController();
+        Stage dialogStage = showHistoryController.getDialogStage();
+        dialogStage.setTitle("Rent history");
+        dialogStage.initModality(Modality.APPLICATION_MODAL);
+        Scene scene = new Scene(dialogRoot);
+        String cssFile = Objects.requireNonNull(getClass().getResource("/css/ShowHistory.css")).toExternalForm();
+        scene.getStylesheets().add(cssFile);
+        dialogStage.getIcons().add(showHistoryController.getIcon());
+        dialogStage.setScene(scene);
+        dialogStage.showAndWait();
+    }
+    private void addHoverTransition(Button button) {
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(250), button);
+        scaleTransition.setFromX(1.0);
+        scaleTransition.setFromY(1.0);
+        scaleTransition.setToX(1.5); // Scale factor for width
+        scaleTransition.setToY(1.5); // Scale factor for height
+        ScaleTransition reverseTransition = new ScaleTransition(Duration.millis(250), button);
+        reverseTransition.setToX(1.0);
+        reverseTransition.setToY(1.0);
 
+        button.setOnMouseEntered(event -> scaleTransition.play());
+        button.setOnMouseExited(event -> reverseTransition.play());
     }
     //Getters and Setters
     public Image getIcon(){

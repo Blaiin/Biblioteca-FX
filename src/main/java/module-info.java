@@ -10,6 +10,7 @@ module its.biblioteca.bibliotecafx {
     requires com.almasb.fxgl.all;
     requires com.google.gson;
 
+    opens its.biblioteca.bibliotecafx.codebase to com.google.gson;
     opens its.biblioteca.bibliotecafx.application to javafx.fxml;
     exports its.biblioteca.bibliotecafx.application;
 }

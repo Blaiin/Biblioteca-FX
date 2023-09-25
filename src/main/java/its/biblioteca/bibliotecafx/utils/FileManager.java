@@ -2,17 +2,23 @@ package its.biblioteca.bibliotecafx.utils;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
+
+import its.biblioteca.bibliotecafx.codebase.Rent;
+import its.biblioteca.bibliotecafx.codebase.User;
+import its.biblioteca.bibliotecafx.codebase.Book;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
+
+import java.io.*;
 import java.util.Arrays;
 import java.util.List;
+import java.time.LocalDate;
 
 public class FileManager {
     private static final String directoryArchivePath = System.getProperty("user.dir") +
@@ -20,6 +26,30 @@ public class FileManager {
     private static final String USERS_JSON = "Users.json";
     private static final String BOOKS_JSON = "Books.json";
     private static final String RENTS_JSON = "Rents.json";
+
+    public static void saveToJson(Object obj) {
+        String objIdentifier = null;
+        Gson gson = new GsonBuilder().registerTypeAdapter(LocalDate.class, new LocalDateTypeAdapter())
+                .setPrettyPrinting().create();
+        String file = "";
+
+        if(obj instanceof User) {
+            file = USERS_JSON;
+            objIdentifier = ((User) obj).getNome();
+        } else if (obj instanceof Book) {
+            file = BOOKS_JSON;
+            objIdentifier = ((Book) obj).getTitle();
+        } else if (obj instanceof Rent) {
+            file = RENTS_JSON;
+        }
+        try (Writer writer = new FileWriter(
+                directoryArchivePath + file)) {
+            gson.toJson(obj, writer);
+            System.out.println("Saved " + objIdentifier + " to " + file.substring(0, file.length() - 5) + ".");
+        } catch (IOException ioExc) {
+            ioExc.printStackTrace();
+        }
+    }
 
     //Get project version element
     public static String getProjectVersion() {
@@ -109,5 +139,16 @@ public class FileManager {
     }
     public String getRentsJson() {
         return RENTS_JSON;
+    }
+    private static class LocalDateTypeAdapter extends TypeAdapter<LocalDate> {
+        @Override
+        public void write(JsonWriter out, LocalDate data) throws IOException {
+            out.value(data.toString());
+        }
+
+        @Override
+        public LocalDate read(JsonReader in) throws IOException {
+            return LocalDate.parse(in.nextString());
+        }
     }
 }

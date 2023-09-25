@@ -1,0 +1,10 @@
+{
+  "id": 1,
+  "nome": "esk",
+  "cognome": "esk",
+  "email": "esk@gmail.com",
+  "numTelefono": "1111111111",
+  "dataNascita": "2023-09-22",
+  "residenza": "",
+  "rentedBooks": []
+}

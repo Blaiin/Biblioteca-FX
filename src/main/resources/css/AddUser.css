@@ -25,3 +25,7 @@
     -fx-font-weight: bold; /* Bold text for labels */
     -fx-font-size: 12px;
 }
+#errorLabel {
+    -fx-text-fill: red;
+}
+

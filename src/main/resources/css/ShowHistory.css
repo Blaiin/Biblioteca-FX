@@ -1,5 +1,5 @@
 /* Root styles */
-#newRentAnchorPane {
+#rentHistoryAnchorPane {
     -fx-background-color: #fcf5d9; /* Background color for the entire application */
     -fx-font-size: 12px; /* Default font size for the entire application */
 }
@@ -14,22 +14,30 @@
     -fx-background-color: #663e1d; /* Background color of buttons on hover */
 }
 
-/* Text field styles */
-.text-field {
-    -fx-background-color: white; /* Background color of text fields */
-    -fx-border-color: #ccc; /* Border color of text fields */
-}
-
 /* Label styles */
 .label {
     -fx-font-weight: bold; /* Bold text for labels */
     -fx-font-size: 12px;
 }
-.date-picker {
-    -fx-border-color: #ccc;
-    -fx-font-weight: bold;
-    -fx-font-size: 10px;
-}
+/* Style the ListView itself */
 .list-view {
+    -fx-background-color: #fcf5d9;
     -fx-background-radius: 20;
+}
+
+/* Style the ListView items */
+.list-cell {
+    -fx-background-color: #fcf5d9;
+    -fx-text-fill: black;
+}
+
+/* Style the selected item */
+.list-cell:selected {
+    -fx-background-color: #fcf5d9;
+    -fx-text-fill: white;
+}
+
+/* Style the scrollbar */
+.scroll-bar {
+    -fx-background-color: white;
 }
