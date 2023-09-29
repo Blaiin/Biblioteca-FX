@@ -20,8 +20,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class AddUserController implements Initializable {
-    private static final Image icon = new Image(String.valueOf(AddUserController.class.getResource("/images/UserIcon.png")));
+public class AddUserController implements Initializable, FXMLController {
+    public static final Image icon = new Image(String.valueOf(AddUserController.class.getResource("/images/UserIcon.png")));
     private final Stage dialogStage;
     private List<User> usersToAdd = new ArrayList<>();
     @FXML
@@ -85,12 +85,16 @@ public class AddUserController implements Initializable {
             return false;
         }
     }
-public Stage getDialogStage() {
-        return this.dialogStage;
-}
-    public static Image getIcon() {
+
+    @Override
+    public Image getIcon() {
         return icon;
     }
+
+    public Stage getDialogStage() {
+        return this.dialogStage;
+}
+
 
     public void back(ActionEvent actionEvent) {
         this.dialogStage.close();

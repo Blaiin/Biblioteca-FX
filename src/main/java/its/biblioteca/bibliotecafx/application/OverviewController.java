@@ -66,6 +66,9 @@ public class OverviewController implements Initializable {
         addHoverTransition(this.showHistoryButton);
         addHoverTransition(this.returnBookButton);
     }
+    public OverviewController() {
+        this.anchorPane = new AnchorPane();
+    }
     public void openAddUserTab() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("AddUser.fxml"));
         Parent dialogRoot = loader.load();
@@ -76,7 +79,7 @@ public class OverviewController implements Initializable {
         Scene scene = new Scene(dialogRoot);
         String cssFile = Objects.requireNonNull(getClass().getResource("/css/AddUser.css")).toExternalForm();
         scene.getStylesheets().add(cssFile);
-        dialogStage.getIcons().add(AddUserController.getIcon());
+        dialogStage.getIcons().add(addUserController.getIcon());
         dialogStage.setScene(scene);
         dialogStage.showAndWait();
     }
@@ -91,7 +94,7 @@ public class OverviewController implements Initializable {
         Scene scene = new Scene(dialogRoot);
         String cssFile = Objects.requireNonNull(getClass().getResource("/css/AddBook.css")).toExternalForm();
         scene.getStylesheets().add(cssFile);
-        dialogStage.getIcons().add(AddBookController.getIcon());
+        dialogStage.getIcons().add(addBookController.getIcon());
         dialogStage.setScene(scene);
         dialogStage.showAndWait();
     }
@@ -105,7 +108,7 @@ public class OverviewController implements Initializable {
         Scene scene = new Scene(dialogRoot);
         String cssFile = Objects.requireNonNull(getClass().getResource("/css/NewRent.css")).toExternalForm();
         scene.getStylesheets().add(cssFile);
-        dialogStage.getIcons().add(NewRentController.getIcon());
+        dialogStage.getIcons().add(newRentController.getIcon());
         dialogStage.setScene(scene);
         dialogStage.showAndWait();
     }
@@ -120,6 +123,20 @@ public class OverviewController implements Initializable {
         String cssFile = Objects.requireNonNull(getClass().getResource("/css/ShowHistory.css")).toExternalForm();
         scene.getStylesheets().add(cssFile);
         dialogStage.getIcons().add(showHistoryController.getIcon());
+        dialogStage.setScene(scene);
+        dialogStage.showAndWait();
+    }
+    private <T extends FXMLController> void openTab(String fxmlFile, String title, String cssFileName) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+        Parent dialogRoot = loader.load();
+        T fxmlController = loader.getController();
+        Stage dialogStage = fxmlController.getDialogStage();
+        dialogStage.setTitle(title);
+        dialogStage.initModality(Modality.APPLICATION_MODAL);
+        Scene scene = new Scene(dialogRoot);
+        String cssFile = Objects.requireNonNull(getClass().getResource("/css/" + cssFileName)).toExternalForm();
+        scene.getStylesheets().add(cssFile);
+        dialogStage.getIcons().add(fxmlController.getIcon());
         dialogStage.setScene(scene);
         dialogStage.showAndWait();
     }
@@ -139,5 +156,9 @@ public class OverviewController implements Initializable {
     //Getters and Setters
     public Image getIcon(){
         return this.icon;
+    }
+
+    public AnchorPane getAnchorPane() {
+        return anchorPane;
     }
 }

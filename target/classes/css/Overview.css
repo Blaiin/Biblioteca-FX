@@ -27,8 +27,6 @@
 #showHistoryButton:hover,
 #returnBookButton:hover {
     -fx-background-color: #663e1d;
-    //-fx-min-width: 120px; /* Change to your desired width on hover */
-    //-fx-min-height: 40px;
 }
 /* Text field styles */
 .text-field {

@@ -5,15 +5,15 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="792.0" prefWidth="1157.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="its.biblioteca.bibliotecafx.application.OverviewController">
-   <ImageView fx:id="overviewImage" fitHeight="686.0" fitWidth="1060.0" layoutX="49.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" />
-   <Button fx:id="addUserButton" layoutX="80.0" layoutY="93.0" mnemonicParsing="false" onAction="#openAddUserTab" text="Add user" />
-   <Button fx:id="addBookButton" layoutX="80.0" layoutY="237.0" mnemonicParsing="false" onAction="#openAddBookTab" text="Add book" />
-   <Button fx:id="addRentButton" layoutX="80.0" layoutY="384.0" mnemonicParsing="false" onAction="#openNewRentTab" text="New rent.." />
-   <Button fx:id="showHistoryButton" layoutX="80.0" layoutY="521.0" mnemonicParsing="false" onAction="#openShowHistoryTab" text="Show History" />
+<AnchorPane fx:id="anchorPane" cache="true" prefHeight="595.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="its.biblioteca.bibliotecafx.application.OverviewController">
+   <ImageView fx:id="overviewImage" fitHeight="561.0" fitWidth="707.0" layoutX="17.0" layoutY="30.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+   <Button fx:id="addUserButton" layoutX="51.0" layoutY="93.0" mnemonicParsing="false" onAction="#openAddUserTab" text="Add user" />
+   <Button fx:id="addBookButton" layoutX="51.0" layoutY="179.0" mnemonicParsing="false" onAction="#openAddBookTab" text="Add book" />
+   <Button fx:id="addRentButton" layoutX="51.0" layoutY="285.0" mnemonicParsing="false" onAction="#openNewRentTab" text="New rent.." />
+   <Button fx:id="showHistoryButton" layoutX="51.0" layoutY="394.0" mnemonicParsing="false" onAction="#openShowHistoryTab" text="Show History" />
    <Label fx:id="versionLabel" layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="212.0" />
-   <Button fx:id="returnBookButton" layoutX="80.0" layoutY="666.0" mnemonicParsing="false" text="Return book" />
-   <Button fx:id="showRentsButton" layoutX="1057.0" layoutY="750.0" mnemonicParsing="false" text="Rents" />
-   <Button fx:id="showBooksButton" layoutX="996.0" layoutY="750.0" mnemonicParsing="false" text="Books" />
-   <Button fx:id="showUsersButton" layoutX="938.0" layoutY="750.0" mnemonicParsing="false" text="Users" />
+   <Button fx:id="returnBookButton" layoutX="51.0" layoutY="499.0" mnemonicParsing="false" text="Return book" />
+   <Button fx:id="showRentsButton" layoutX="679.0" layoutY="564.0" mnemonicParsing="false" text="Rents" />
+   <Button fx:id="showBooksButton" layoutX="616.0" layoutY="564.0" mnemonicParsing="false" text="Books" />
+   <Button fx:id="showUsersButton" layoutX="557.0" layoutY="564.0" mnemonicParsing="false" text="Users" />
 </AnchorPane>

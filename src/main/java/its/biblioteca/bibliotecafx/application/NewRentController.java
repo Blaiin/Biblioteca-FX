@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-public class NewRentController implements Initializable {
+public class NewRentController implements Initializable, FXMLController {
     private final Stage dialogStage;
     private static final Image icon = new Image(String.valueOf(NewRentController.class.getResource("/images/UserIcon.png")));
     @FXML
@@ -42,7 +42,8 @@ public class NewRentController implements Initializable {
         this.dialogStage = new Stage();
     }
 
-    public static Image getIcon() {
+    @Override
+    public Image getIcon() {
         return icon;
     }
 

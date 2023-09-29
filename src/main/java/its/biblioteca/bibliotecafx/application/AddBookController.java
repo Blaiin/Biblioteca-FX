@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class AddBookController implements Initializable{
+public class AddBookController implements Initializable,FXMLController{
     private static final Image icon = new Image(String.valueOf(AddBookController.class.getResource("/images/BookIcon.png")));
     private final Stage dialogStage;
     private List<Book> booksToAdd = new ArrayList<>();
@@ -78,7 +78,8 @@ public class AddBookController implements Initializable{
         }
     }
 
-    public static Image getIcon() {
+    @Override
+    public Image getIcon() {
         return icon;
     }
 

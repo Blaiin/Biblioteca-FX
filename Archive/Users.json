@@ -1,10 +1,10 @@
 {
   "id": 1,
-  "nome": "esk",
-  "cognome": "esk",
-  "email": "esk@gmail.com",
-  "numTelefono": "1111111111",
-  "dataNascita": "2023-09-22",
+  "nome": "Davide ",
+  "cognome": "Kuzmisky",
+  "email": "davide@gmail.com",
+  "numTelefono": "3333333333",
+  "dataNascita": "2023-08-30",
   "residenza": "",
   "rentedBooks": []
 }
